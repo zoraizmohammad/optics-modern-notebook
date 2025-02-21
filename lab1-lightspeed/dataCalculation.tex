@@ -1,127 +1,153 @@
-I will now go through all the required steps to calculate the speed of light and its uncertainties based on the information and instructions provided. Here’s a breakdown of the process:
+Using the equation:
 
-1. **Given Data**:
-   - Slope \( A = -0.175 \, \text{pixels/Hz} \)
-   - Conversion factor: \( 4.8 \times 10^{-6} \, \text{m/pixel} \) to convert slope to meters.
-   - \( x_1 = 98 \, \text{cm} = 0.98 \, \text{m}, \, \delta x_1 = 0.001 \, \text{m} \)
-   - \( x_2 = 799 \, \text{cm} = 7.99 \, \text{m}, \, \delta x_2 = 0.001 \, \text{m} \)
+\[
+c = \frac{8\pi X_1 X_2}{|A|}
+\]
 
-2. **Convert Slope \( A \) to meters/Hz**:
-   \[
-   A_{\text{meters}} = (-0.175 \, \text{pixels/Hz}) \times (4.8 \times 10^{-6} \, \text{m/pixel})
-   \]
-   \[
-   A_{\text{meters}} = -8.4 \times 10^{-7} \, \text{m/Hz}
-   \]
+with the given values:  
+- \( X_1 = 0.98 \) m (± 0.001 m)  
+- \( X_2 = 7.99 \) m (± 0.001 m)  
+- \( A = -8.4 \times 10^{-7} \) m/Hz (± 0.1 \times 10^{-7} \) m/Hz)  
 
-3. **Calculate the Speed of Light** using the formula:
-   \[
-   c = \frac{8 \pi x_1 x_2}{|A|}
-   \]
-   Substituting the values:
-   \[
-   c = \frac{8 \pi (0.98) (7.99)}{| -8.4 \times 10^{-7} |}
-   \]
-   \[
-   c = \frac{8 \pi (0.98) (7.99)}{8.4 \times 10^{-7}}
-   \]
-   \[
-   c = 2.922 \times 10^{8} \, \text{m/s}
-   \]
+The calculated speed of light:
 
-4. **Estimate Uncertainties**:
-   We need to calculate the uncertainty \( \delta c \) using error propagation:
-   \[
-   (\delta c)^2 = \left( \frac{\partial c}{\partial A} \delta A \right)^2 + \left( \frac{\partial c}{\partial x_1} \delta x_1 \right)^2 + \left( \frac{\partial c}{\partial x_2} \delta x_2 \right)^2
-   \]
-   Where:
-   \[
-   \frac{\partial c}{\partial A} = -\frac{8 \pi x_1 x_2}{A^2}, \quad \frac{\partial c}{\partial x_1} = \frac{8 \pi x_2}{A}, \quad \frac{\partial c}{\partial x_2} = \frac{8 \pi x_1}{A}
-   \]
+\[
+c = \frac{8\pi (0.98) (7.99)}{| -8.4 \times 10^{-7} |}
+\]
 
-   - Calculate partial derivatives:
-     \[
-     \frac{\partial c}{\partial A} = -\frac{8 \pi (0.98) (7.99)}{(8.4 \times 10^{-7})^2}
-     \]
-     \[
-     = -1.11 \times 10^{15} \, \text{m/s per m/Hz}
-     \]
-     \[
-     \frac{\partial c}{\partial x_1} = \frac{8 \pi (7.99)}{8.4 \times 10^{-7}} = 2.39 \times 10^{8} \, \text{m/s per m}
-     \]
-     \[
-     \frac{\partial c}{\partial x_2} = \frac{8 \pi (0.98)}{8.4 \times 10^{-7}} = 2.94 \times 10^{7} \, \text{m/s per m}
-     \]
+\[
+c = \frac{8\pi (7.8302)}{8.4 \times 10^{-7}}
+\]
 
-   - Calculate uncertainties for \( \delta A, \delta x_1, \delta x_2 \):
-     - For \( \delta A \) (based on fluctuations from best-fit line and residual analysis of your graph):
-       \[
-       \delta A = 2.88 \times 10^{-9} \, \text{m/Hz}
-       \]
+\[
+c = \frac{196.517}{8.4 \times 10^{-7}}
+\]
 
-     - Plug into uncertainty formula:
-       \[
-       (\delta c)^2 = \left( -1.11 \times 10^{15} \times 2.88 \times 10^{-9} \right)^2 + \left( 2.39 \times 10^{8} \times 0.001 \right)^2 + \left( 2.94 \times 10^{7} \times 0.001 \right)^2
-       \]
-       \[
-       (\delta c)^2 = (3.20 \times 10^{6})^2 + (2.39 \times 10^{5})^2 + (2.94 \times 10^{4})^2
-       \]
-       \[
-       (\delta c)^2 = (1.02 \times 10^{13}) + (5.71 \times 10^{10}) + (8.64 \times 10^{8})
-       \]
-       \[
-       \delta c = \sqrt{1.026 \times 10^{13}} = 3.2 \times 10^{6} \, \text{m/s}
-       \]
-
-5. **Final Result with Uncertainty**:
-   \[
-   c = (2.92 \times 10^{8}) \pm (3.2 \times 10^{6}) \, \text{m/s}
-   \]
-
-
-1. **Experimental Fluctuation in Position:**
-   The formula for experimental fluctuation of the laser spot position \( \delta x_{\text{experiment}} \) is given by:
-   \[
-   (\delta x_{\text{experiment}})^2 = \frac{1}{N - 2} \sum_{i=1}^{N} (x_i - (A f_i + B))^2
-   \]
-   where:
-   - \( N \) is the number of data points,
-   - \( x_i \) are the measured positions,
-   - \( A \) and \( B \) are the linear fit parameters from the best-fit line equation \( x = A f + B \).
-
-2. **Convert Fluctuation from Pixels to Meters:**
-   Once the experimental fluctuation \( \delta x_{\text{experiment}} \) is calculated in pixels, convert it to meters using the conversion factor:
-   \[
-   \delta x_{\text{meters}} = \delta x_{\text{pixels}} \times (4.8 \times 10^{-6}) \, \text{m/pixel}
-   \]
-
-3. **Uncertainty in Frequency \( \delta f \):**
-   Using the relationship:
-   \[
-   \delta f = \frac{|\delta x|}{|A|}
-   \]
-   where \( A \) is the slope in meters per Hz.
+\[
+c = 2.34 \times 10^8 \text{ m/s}
+\]
 
 ---
 
-### **Step 1: Calculate the Experimental Fluctuation \( \delta x_{\text{experiment}} \)**
-We already calculated this:
+### **Step-by-Step Uncertainty Calculation**  
+
+Using the uncertainty propagation formula:
+
 \[
-\delta x_{\text{experiment}} = 2.84 \times 10^{-5} \, \text{m}
+(\delta c)^2 = \left(\frac{\partial c}{\partial A} \delta A \right)^2 + \left(\frac{\partial c}{\partial X_1} \delta X_1 \right)^2 + \left(\frac{\partial c}{\partial X_2} \delta X_2 \right)^2
 \]
 
-### **Step 2: Calculate the Uncertainty in Frequency \( \delta f \)**
-Using:
+With the partial derivatives:
+
 \[
-\delta f = \frac{|\delta x|}{|A|}
-\]
-Substitute the values:
-\[
-\delta f = \frac{2.84 \times 10^{-5}}{8.4 \times 10^{-7}}
+\frac{\partial c}{\partial A} = - \frac{8\pi X_1 X_2}{A^2}
 \]
 
-### **Result:**
-The uncertainty in frequency is:
 \[
-\delta f = 33.82 \, \text{Hz}
+\frac{\partial c}{\partial X_1} = \frac{8\pi X_2}{A}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{8\pi X_1}{A}
+\]
+
+**Computing each derivative:**  
+
+\[
+\frac{\partial c}{\partial A} = - \frac{8\pi (0.98) (7.99)}{(-8.4 \times 10^{-7})^2}
+\]
+
+\[
+\frac{\partial c}{\partial A} = - \frac{196.517}{7.056 \times 10^{-13}}
+\]
+
+\[
+\frac{\partial c}{\partial A} = -2.79 \times 10^{14}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = \frac{8\pi (7.99)}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = \frac{200.67}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = -2.39 \times 10^8
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{8\pi (0.98)}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{24.62}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = -2.93 \times 10^7
+\]
+
+---
+
+### **Computing Individual Uncertainty Contributions:**
+
+\[
+(\delta c_A)^2 = (-2.79 \times 10^{14} \times 0.1 \times 10^{-7})^2
+\]
+
+\[
+= ( -2.79 \times 10^6 )^2
+\]
+
+\[
+= 7.78 \times 10^{12}
+\]
+
+\[
+(\delta c_{X1})^2 = (-2.39 \times 10^8 \times 0.001)^2
+\]
+
+\[
+= ( -2.39 \times 10^5 )^2
+\]
+
+\[
+= 5.71 \times 10^{10}
+\]
+
+\[
+(\delta c_{X2})^2 = (-2.93 \times 10^7 \times 0.001)^2
+\]
+
+\[
+= ( -2.93 \times 10^4 )^2
+\]
+
+\[
+= 8.60 \times 10^8
+\]
+
+---
+
+### **Total Uncertainty in \( c \):**
+
+\[
+\delta c = \sqrt{ 7.78 \times 10^{12} + 5.71 \times 10^{10} + 8.60 \times 10^8 }
+\]
+
+\[
+\delta c = \sqrt{7.84 \times 10^{12}}
+\]
+
+\[
+\delta c = 2.80 \times 10^6 \text{ m/s}
+\]
+
+---
+
+### **Final Result with Uncertainty**
+\[
+c = (2.34 \pm 0.028) \times 10^8 \text{ m/s}
 \]
