@@ -1,0 +1,153 @@
+Using the equation:
+
+\[
+c = \frac{8\pi X_1 X_2}{|A|}
+\]
+
+with the given values:  
+- \( X_1 = 0.98 \) m (± 0.001 m)  
+- \( X_2 = 7.99 \) m (± 0.001 m)  
+- \( A = -8.4 \times 10^{-7} \) m/Hz (± 0.1 \times 10^{-7} \) m/Hz)  
+
+The calculated speed of light:
+
+\[
+c = \frac{8\pi (0.98) (7.99)}{| -8.4 \times 10^{-7} |}
+\]
+
+\[
+c = \frac{8\pi (7.8302)}{8.4 \times 10^{-7}}
+\]
+
+\[
+c = \frac{196.517}{8.4 \times 10^{-7}}
+\]
+
+\[
+c = 2.34 \times 10^8 \text{ m/s}
+\]
+
+---
+
+### **Step-by-Step Uncertainty Calculation**  
+
+Using the uncertainty propagation formula:
+
+\[
+(\delta c)^2 = \left(\frac{\partial c}{\partial A} \delta A \right)^2 + \left(\frac{\partial c}{\partial X_1} \delta X_1 \right)^2 + \left(\frac{\partial c}{\partial X_2} \delta X_2 \right)^2
+\]
+
+With the partial derivatives:
+
+\[
+\frac{\partial c}{\partial A} = - \frac{8\pi X_1 X_2}{A^2}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = \frac{8\pi X_2}{A}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{8\pi X_1}{A}
+\]
+
+**Computing each derivative:**  
+
+\[
+\frac{\partial c}{\partial A} = - \frac{8\pi (0.98) (7.99)}{(-8.4 \times 10^{-7})^2}
+\]
+
+\[
+\frac{\partial c}{\partial A} = - \frac{196.517}{7.056 \times 10^{-13}}
+\]
+
+\[
+\frac{\partial c}{\partial A} = -2.79 \times 10^{14}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = \frac{8\pi (7.99)}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = \frac{200.67}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_1} = -2.39 \times 10^8
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{8\pi (0.98)}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = \frac{24.62}{-8.4 \times 10^{-7}}
+\]
+
+\[
+\frac{\partial c}{\partial X_2} = -2.93 \times 10^7
+\]
+
+---
+
+### **Computing Individual Uncertainty Contributions:**
+
+\[
+(\delta c_A)^2 = (-2.79 \times 10^{14} \times 0.1 \times 10^{-7})^2
+\]
+
+\[
+= ( -2.79 \times 10^6 )^2
+\]
+
+\[
+= 7.78 \times 10^{12}
+\]
+
+\[
+(\delta c_{X1})^2 = (-2.39 \times 10^8 \times 0.001)^2
+\]
+
+\[
+= ( -2.39 \times 10^5 )^2
+\]
+
+\[
+= 5.71 \times 10^{10}
+\]
+
+\[
+(\delta c_{X2})^2 = (-2.93 \times 10^7 \times 0.001)^2
+\]
+
+\[
+= ( -2.93 \times 10^4 )^2
+\]
+
+\[
+= 8.60 \times 10^8
+\]
+
+---
+
+### **Total Uncertainty in \( c \):**
+
+\[
+\delta c = \sqrt{ 7.78 \times 10^{12} + 5.71 \times 10^{10} + 8.60 \times 10^8 }
+\]
+
+\[
+\delta c = \sqrt{7.84 \times 10^{12}}
+\]
+
+\[
+\delta c = 2.80 \times 10^6 \text{ m/s}
+\]
+
+---
+
+### **Final Result with Uncertainty**
+\[
+c = (2.34 \pm 0.028) \times 10^8 \text{ m/s}
+\]
